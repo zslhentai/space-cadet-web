@@ -66,6 +66,14 @@ void midi::sdl_audio_callback(void* data, Uint8 *stream, int len)
 }
 #endif
 
+void midi::set_volume(float volume)
+{
+#ifdef MUSIC_TSF
+	if (tsfSynth) tsf_set_volume(tsfSynth, volume);
+#endif
+	Mix_VolumeMusic(static_cast<int>(volume * MIX_MAX_VOLUME));
+}
+
 constexpr uint32_t FOURCC(uint8_t a, uint8_t b, uint8_t c, uint8_t d)
 {
 	return static_cast<uint32_t>((d << 24) | (c << 16) | (b << 8) | a);
@@ -129,11 +137,6 @@ int midi::music_stop()
 #endif
 }
 
-#ifdef MUSIC_TSF
-extern unsigned char gm_sf2[];
-extern unsigned int gm_sf2_len;
-#endif
-
 int midi::music_init()
 {
 	if (pb::FullTiltMode)
@@ -158,7 +161,9 @@ int midi::music_init()
 	currentMessage = nullptr;
 	currentMidi = {false};
 	
-	tsfSynth = tsf_load_memory(gm_sf2, (int)gm_sf2_len);
+	// SoundFont is optional and must be supplied from an authorized source.
+	tsfSynth = tsf_load_filename("/game_resources/GM.SF2");
+	if (!tsfSynth) return 0;
 
 	int sampleRate;
 	if (Mix_QuerySpec(&sampleRate, nullptr, nullptr)) {

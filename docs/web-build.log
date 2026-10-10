@@ -1,0 +1,12 @@
+configure: /workspace/toolchains/python/cmake/data/bin/cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -G Ninja -DCMAKE_MAKE_PROGRAM=/workspace/toolchains/python/bin/ninja -DCMAKE_TOOLCHAIN_FILE=/workspace/toolchains/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake -DCMAKE_CROSSCOMPILING_EMULATOR=/workspace/toolchains/emsdk/node/24.19.0_64bit/bin/node
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /workspace/space-cadet-web/build
+[0/2] Re-checking globbed directories...
+[1/7] Building CXX object CMakeFiles/pinball.dir/vendor/SpaceCadetPinball/SpaceCadetPinball/options.cpp.o
+[2/7] Building CXX object CMakeFiles/pinball.dir/vendor/SpaceCadetPinball/SpaceCadetPinball/midi.cpp.o
+[3/7] Building CXX object CMakeFiles/pinball.dir/vendor/SpaceCadetPinball/SpaceCadetPinball/pb.cpp.o
+[4/7] Building CXX object CMakeFiles/pinball.dir/vendor/SpaceCadetPinball/SpaceCadetPinball/winmain.cpp.o
+[5/7] Building CXX object CMakeFiles/pinball.dir/src/web_bridge.cpp.o
+[6/7] Linking CXX executable /workspace/space-cadet-web/dist/engine/pinball.js
+Static distribution verified: WASM present, no game assets or preload package.

@@ -1,0 +1,13 @@
+{
+  "name": "space-cadet-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "test": "node --test tests/resources.test.js",
+    "test:browser": "node tests/browser.cjs",
+    "serve": "python3 -m http.server 8080 --directory dist"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}

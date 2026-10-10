@@ -1,0 +1,9 @@
+{
+  "browser": "Chromium",
+  "pageErrors": [],
+  "dialogs": [
+    "Could not load game data\n\nThe .dat file is missing"
+  ],
+  "wasmBytes": 1607322,
+  "scope": "Original Web build initialization without commercial game resources; complete gameplay not verified"
+}

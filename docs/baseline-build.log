@@ -1,0 +1,70 @@
+[1/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/cmake_pch.hxx.pch
+[2/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/fullscrn.cpp.o
+[3/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/gdrv.cpp.o
+[4/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/GroupData.cpp.o
+[5/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/imgui_sdl.cpp.o
+[6/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/maths.cpp.o
+[7/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/loader.cpp.o
+[8/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/control.cpp.o
+[9/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/high_score.cpp.o
+[10/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/nudge.cpp.o
+[11/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/memory.cpp.o
+[12/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/partman.cpp.o
+[13/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/options.cpp.o
+[14/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/midi.cpp.o
+[15/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/pinball.cpp.o
+[16/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/pb.cpp.o
+[17/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/proj.cpp.o
+[18/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/Sound.cpp.o
+[19/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/score.cpp.o
+[20/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TBlocker.cpp.o
+[21/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TBumper.cpp.o
+[22/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/render.cpp.o
+[23/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/SpaceCadetPinball.cpp.o
+[24/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TCircle.cpp.o
+[25/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TBall.cpp.o
+[26/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TDemo.cpp.o
+[27/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TDrain.cpp.o
+[28/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TCollisionComponent.cpp.o
+[29/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TComponentGroup.cpp.o
+[30/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TFlagSpinner.cpp.o
+[31/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TEdgeBox.cpp.o
+[32/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TEdgeManager.cpp.o
+[33/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TFlipper.cpp.o
+[34/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TGate.cpp.o
+[35/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TEdgeSegment.cpp.o
+[36/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TFlipperEdge.cpp.o
+[37/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/THole.cpp.o
+[38/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/timer.cpp.o
+[39/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TKickback.cpp.o
+[40/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TLightGroup.cpp.o
+[41/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TLightBargraph.cpp.o
+[42/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TKickout.cpp.o
+[43/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TLightRollover.cpp.o
+[44/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TLight.cpp.o
+[45/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TLine.cpp.o
+[46/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TPlunger.cpp.o
+[47/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TPinballTable.cpp.o
+[48/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TOneway.cpp.o
+[49/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TPopupTarget.cpp.o
+[50/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TPinballComponent.cpp.o
+[51/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TSink.cpp.o
+[52/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TSoloTarget.cpp.o
+[53/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TRollover.cpp.o
+[54/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TRamp.cpp.o
+[55/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TTextBoxMessage.cpp.o
+[56/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TSound.cpp.o
+[57/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TTimer.cpp.o
+[58/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TTextBox.cpp.o
+[59/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TTripwire.cpp.o
+[60/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/zdrv.cpp.o
+[61/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TWall.cpp.o
+[62/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/TTableLayer.cpp.o
+[63/64] Building CXX object CMakeFiles/SpaceCadetPinball.dir/SpaceCadetPinball/winmain.cpp.o
+[64/64] Linking CXX executable /workspace/space-cadet-web/vendor/SpaceCadetPinball/bin/SpaceCadetPinball.html
+em++: warning: DEMANGLE_SUPPORT is deprecated (mangled names no longer appear in stack traces). Please open a bug if you have a continuing need for this setting [-Wdeprecated]
+cache:INFO: generating system asset: symbol_lists/9e347d1b919885a40c09517e13880d99bc242aec.json... (this will be cached in "/workspace/toolchains/emsdk/upstream/emscripten/cache/symbol_lists/9e347d1b919885a40c09517e13880d99bc242aec.json" for subsequent builds)
+cache:INFO:  - ok
+warning: JS library symbol '$demangle' is deprecated. Please open a bug if you have a continuing need for this symbol [-Wdeprecated]
+warning: JS library symbol '$stackTrace' is deprecated. Please open a bug if you have a continuing need for this symbol [-Wdeprecated]
+em++: warning: warnings in JS library compilation [-Wjs-compiler]

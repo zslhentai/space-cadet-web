@@ -70,6 +70,26 @@ void score::load_msg_font_3DPB(LPCSTR lpName)
 {
 	if (strcmp(lpName, "pbmsg_ft") != 0)
 		return;
+	// The commercial Windows FONT resource must be supplied by the user.
+	auto file = fopen("/game_resources/PB_MSGFT.BIN", "rb");
+	if (!file) return;
+	fseek(file, 0, SEEK_END);
+	auto length = ftell(file);
+	rewind(file);
+	if (length < 134 || length > 65536) { fclose(file); return; }
+	PB_MSGFT_data.resize(length);
+	auto read = fread(PB_MSGFT_data.data(), 1, length, file);
+	fclose(file);
+	if (read != static_cast<size_t>(length)) return;
+	auto fontHeight = PB_MSGFT_data[4] | (PB_MSGFT_data[5] << 8);
+	if (fontHeight < 1 || fontHeight > 64) return;
+	size_t expected = 134;
+	for (int i = 0; i < 128; ++i) {
+		auto width = PB_MSGFT_data[6 + i];
+		if (width > 64) return;
+		if (width) expected += width * fontHeight + 1;
+	}
+	if (expected > PB_MSGFT_data.size()) return;
 	auto rcData = reinterpret_cast<const int16_t*>(PB_MSGFT_data.data());
 
 	auto fontp = memory::allocate<score_msg_font_type>();

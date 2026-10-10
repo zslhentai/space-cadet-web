@@ -62,7 +62,7 @@ void run_loop(std::function<void()> fn)
 										 fn();
 									 }
 								 },
-								 (void *)&fn, 60, 1);
+								 new std::function<void()>(std::move(fn)), 0, 1);
 #else
 	while (!loop_stop)
 	{
@@ -142,7 +142,11 @@ int winmain::WinMain(LPCSTR lpCmdLine)
 	ImGui_ImplSDL2_InitForOpenGL(window, nullptr);
 
 	auto prefPath = SDL_GetPrefPath(nullptr, "SpaceCadetPinball");
-	auto iniPath = std::string(prefPath) + "imgui_pb.ini";
+	static std::string iniPath;
+	iniPath = std::string(prefPath) + "imgui_pb.ini";
+#ifdef __EMSCRIPTEN__
+	iniPath = "/game_resources/imgui_pb.ini";
+#endif
 	io.IniFilename = iniPath.c_str();
 	SDL_free(prefPath);
 
@@ -197,7 +201,8 @@ int winmain::WinMain(LPCSTR lpCmdLine)
 	double frameDuration = TargetFrameTime.count(), UpdateToFrameCounter = 0;
 	DurationMs sleepRemainder(0);
 	auto prevTime = frameStart;
-	run_loop([&]() {
+	// Browser callbacks outlive WinMain's stack. Own all frame state by value.
+	run_loop([=]() mutable {
 		if (DispFrameRate)
 		{
 			auto curTime = Clock::now();
@@ -306,6 +311,11 @@ int winmain::WinMain(LPCSTR lpCmdLine)
 			auto targetTimeDelta = TargetFrameTime - DurationMs(updateEnd - frameStart) - sleepRemainder;
 
 			TimePoint frameEnd;
+#ifdef __EMSCRIPTEN__
+			// requestAnimationFrame owns scheduling; never busy-wait on the UI thread.
+			frameEnd = updateEnd;
+			sleepRemainder = DurationMs(0);
+#else
 			if (targetTimeDelta > DurationMs::zero())
 			{
 				std::this_thread::sleep_for(targetTimeDelta);
@@ -317,6 +327,7 @@ int winmain::WinMain(LPCSTR lpCmdLine)
 				frameEnd = updateEnd;
 				sleepRemainder = DurationMs(0);
 			}
+#endif
 
 			// Limit duration to 2 * target time
 			frameDuration = std::min(frameDuration + DurationMs(frameEnd - frameStart).count(),
@@ -343,6 +354,11 @@ int winmain::WinMain(LPCSTR lpCmdLine)
 
 void winmain::RenderUi()
 {
+#ifdef __EMSCRIPTEN__
+	// HTML supplies the toolbar; keep the original score/name-entry dialog.
+	high_score::RenderHighScoreDialog();
+	return;
+#endif
 	// No demo window in release to save space
 #ifndef NDEBUG
 	if (ShowImGuiDemo)
@@ -543,6 +559,13 @@ void winmain::RenderUi()
 int winmain::event_handler(const SDL_Event *event)
 {
 	ImGui_ImplSDL2_ProcessEvent(event);
+#ifdef __EMSCRIPTEN__
+	// Gameplay input is owned/ref-counted by the HTML pointer + keyboard layer.
+	// SDL still feeds ImGui dialogs, but must not apply duplicate flipper events.
+	if (event->type == SDL_KEYDOWN || event->type == SDL_KEYUP ||
+		event->type == SDL_MOUSEBUTTONDOWN || event->type == SDL_MOUSEBUTTONUP)
+		return 1;
+#endif
 
 	if (ImIO->WantCaptureMouse)
 	{

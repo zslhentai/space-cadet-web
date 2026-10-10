@@ -166,8 +166,11 @@ int loader::get_sound_id(int groupIndex)
 					fclose(file);
 				}
 
-				auto sampleCount = wavHeader.data_size / (wavHeader.channels * (wavHeader.bits_per_sample / 8.0));
-				sound_list[soundIndex].Duration = static_cast<float>(sampleCount / wavHeader.sample_rate);
+				// Missing optional audio must not create NaN durations.
+				if (wavHeader.channels && wavHeader.bits_per_sample && wavHeader.sample_rate) {
+					auto sampleCount = wavHeader.data_size / (wavHeader.channels * (wavHeader.bits_per_sample / 8.0));
+					sound_list[soundIndex].Duration = static_cast<float>(sampleCount / wavHeader.sample_rate);
+				}
 				sound_list[soundIndex].WavePtr = Sound::LoadWaveFile(filePath);
 			}
 		}

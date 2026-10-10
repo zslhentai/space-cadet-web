@@ -1,6 +1,8 @@
 import concurrent.futures, json, pathlib, urllib.request, re
 
 ROOT = pathlib.Path(__file__).parent / 'vendor' / 'SpaceCadetPinball'
+if ROOT.exists():
+    raise SystemExit('Refusing to overwrite the patched vendor snapshot. Use a separate empty directory for provenance refresh.')
 REF = '0bc12d3ca97a30a61e1e325cfde1eeec379bb9b9'
 BASE = 'https://raw.githubusercontent.com/alula/SpaceCadetPinball/' + REF + '/'
 tree = json.load(urllib.request.urlopen('https://api.github.com/repos/alula/SpaceCadetPinball/git/trees/' + REF + '?recursive=1'))['tree']

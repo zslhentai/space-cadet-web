@@ -1,0 +1,34 @@
+[
+  {
+    "browser": "chromium",
+    "version": "154.0.8037.57",
+    "result": "PASS",
+    "viewports": 6,
+    "multiPointer": "PASS",
+    "keyboardTouchOwnership": "PASS",
+    "fullscreenFallback": "PASS",
+    "settingsReload": "PASS",
+    "realWasmExports": "PASS",
+    "missingResourceGuard": "PASS",
+    "gameplay": "BLOCKED: no authorized game resources",
+    "wasmBytes": [
+      1360224
+    ]
+  },
+  {
+    "browser": "webkit",
+    "version": "26.5",
+    "result": "PASS",
+    "viewports": 6,
+    "multiPointer": "PASS",
+    "keyboardTouchOwnership": "PASS",
+    "fullscreenFallback": "PASS",
+    "settingsReload": "PASS",
+    "realWasmExports": "PASS",
+    "missingResourceGuard": "PASS",
+    "gameplay": "BLOCKED: no authorized game resources",
+    "wasmBytes": [
+      1360224
+    ]
+  }
+]

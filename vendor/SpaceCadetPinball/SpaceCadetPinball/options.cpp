@@ -104,6 +104,13 @@ void options::init()
 	Options.FramesPerSecond = std::min(MaxFps, std::max(MinUps, get_int("Frames Per Second", DefFps)));
 	Options.UpdatesPerSecond = std::min(MaxUps, std::max(MinUps, get_int("Updates Per Second", DefUps)));
 	Options.UpdatesPerSecond = std::max(Options.UpdatesPerSecond, Options.FramesPerSecond);
+#ifdef __EMSCRIPTEN__
+	// rAF supplies one display frame per callback. Keep the original physics
+	// substeps in pb::frame; do not allow saved desktop FPS ratios to skip frames.
+	Options.UniformScaling = true;
+	Options.FramesPerSecond = 60;
+	Options.UpdatesPerSecond = 60;
+#endif
 
 	winmain::UpdateFrameRate();
 

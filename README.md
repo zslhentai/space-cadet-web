@@ -88,7 +88,7 @@ CMAKE_BIN=/absolute/path/to/cmake NINJA_BIN=/absolute/path/to/ninja bash scripts
 3. 推送后运行 `.github/workflows/pages.yml`，或手动触发。
 4. workflow 构建 `dist/` 并发布，访客自行在本地导入合法资源。
 
-本次没有指定目标 GitHub 仓库，因此只创建了本地 Git 提交和交付包；**没有实际推送或执行线上 Pages 发布**。
+源码仓库：[zslhentai/space-cadet-web](https://github.com/zslhentai/space-cadet-web)。原始交付提交 `3a310e51398991122388b5e985f3195bce22bf52` 已连同此前提交历史完整推送，未加入商业资源。迁移、Actions 实测及 Pages 启用状态见 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)。
 
 ## 验证
 

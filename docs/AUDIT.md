@@ -58,3 +58,7 @@ alula 仓库的 `game_resources` 仅有 README，游戏仍需要原版 DAT/WAV�
 - `dvh` 与安全区适配；实际 canvas 元素本身按 600:416 拟合，避免排行榜指针坐标受黑边影响。
 - iPhone 浏览器不支持容器 Fullscreen API 时，使用页面内沉浸回退，不能保证隐藏系统栏。
 - localStorage 每秒/生命周期保存，捕获存储异常。没有实现中途局面存档或离线 Service Worker。
+
+## GitHub 仓库迁移复查
+
+原始交付提交 `3a310e51398991122388b5e985f3195bce22bf52` 已保留历史推送到 https://github.com/zslhentai/space-cadet-web 。远程递归树的 184 个文件与本地逐项匹配；未新增游戏资源或改动引擎。核心 92 个源文件/头文件的哈希检查和静态分发检查再次通过。Actions 从原有源码编译 WASM；Pages 构建与发布实测见 `DEPLOYMENT.md`，不改变上述资源授权边界。

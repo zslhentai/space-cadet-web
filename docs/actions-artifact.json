@@ -1,0 +1,16 @@
+{
+  "run_id": 38096676537,
+  "artifacts": [
+    {
+      "id": 11686246133,
+      "name": "github-pages",
+      "size_in_bytes": 623987,
+      "expired": false,
+      "digest": "sha256:88697bf6cbbc50d3d7db7a1fe2b5d8658dbe67ff282edea3a2d915fa1cd24dd9",
+      "created_at": "2026-10-10T23:58:13Z",
+      "expires_at": "2026-10-11T23:58:13Z"
+    }
+  ],
+  "direct_download_verified": false,
+  "direct_download_limitation": "Artifact blob host returned Forbidden in this execution environment; CI check-dist.py and upload step succeeded."
+}
